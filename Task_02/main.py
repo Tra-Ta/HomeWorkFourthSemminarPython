@@ -7,6 +7,27 @@
 # Напишите программу для нахождения максимального числа ягод, которое может собрать за один заход собирающий модуль, 
 # находясь перед некоторым кустом заданной во входном файле грядки.
 
+import random
+
 count_bushes = int(input("Введите количество кустов -> "))
-# i # куст 
-# ai # ягоды
+
+bushes = []
+max_beries = 0
+
+for i in range(count_bushes):
+    bushes.append(random.randint(1, 20))
+
+print(bushes)
+
+for i in range(len(bushes)):
+    k = 0
+    if i == len(bushes)-1:
+        k = bushes[i]+bushes[i-1]+bushes[0]
+        
+    else:
+        k = bushes[i]+bushes[i-1]+bushes[i+1]    
+
+    if k > max_beries:
+        max_beries = k
+
+print(f'Собирающий модуль за один заход может собрать максимально {max_beries} ягод')
