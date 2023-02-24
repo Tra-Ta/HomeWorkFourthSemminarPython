@@ -32,5 +32,5 @@ for i in list_one:
             list_finish.append(j)
 
 list_finish = list(set(list_finish))
-print(list_finish.sort())
+list_finish.sort()
 print(list_finish)
